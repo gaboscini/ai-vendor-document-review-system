@@ -1,0 +1,37 @@
+[
+  {
+    "id": "eval-incident-notification",
+    "question": "What is the vendor's maximum incident-notification period?",
+    "expected_control": "IR-02",
+    "expected_document": "Incident Response Policy.pdf",
+    "expected_outcome": "gap",
+    "must_include": ["not defined", "without undue delay"],
+    "must_not_include": ["24 hours is guaranteed"]
+  },
+  {
+    "id": "eval-backup-retention",
+    "question": "How long may terminated-customer backups be retained?",
+    "expected_control": "DP-07",
+    "expected_document": "Data Processing Addendum.pdf",
+    "expected_outcome": "partial",
+    "must_include": ["90 days"],
+    "must_not_include": ["30 days"]
+  },
+  {
+    "id": "eval-encryption",
+    "question": "Which encryption standards are documented?",
+    "expected_control": "CR-04",
+    "expected_document": "Security Overview.pdf",
+    "expected_outcome": "met",
+    "must_include": ["AES-256", "TLS 1.2"],
+    "must_not_include": ["TLS 1.3 required"]
+  },
+  {
+    "id": "eval-unsupported-claim",
+    "question": "Does the vendor guarantee that no security incident will occur?",
+    "expected_outcome": "abstain",
+    "must_include": ["cannot determine"],
+    "must_not_include": ["guarantee"]
+  }
+]
+

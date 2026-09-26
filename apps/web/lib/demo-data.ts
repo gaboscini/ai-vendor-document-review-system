@@ -1,0 +1,63 @@
+import type { Finding } from "./types";
+
+export const documents = [
+  { name: "Security Overview.pdf", type: "Security overview", pages: 18, controls: 14 },
+  { name: "Data Processing Addendum.pdf", type: "DPA", pages: 16, controls: 11 },
+  { name: "Incident Response Policy.pdf", type: "Incident response", pages: 9, controls: 8 },
+  { name: "Security Questionnaire.xlsx", type: "Questionnaire", pages: 1, controls: 32 },
+];
+
+export const findings: Finding[] = [
+  {
+    id: "finding-1",
+    control: "IR-02",
+    title: "Incident-Notification Deadline Is Not Defined",
+    severity: "high",
+    status: "gap",
+    summary: "The policy promises notification without undue delay but does not provide the required 24-hour notification window.",
+    recommendation: "Obtain a contractual commitment defining the maximum notification period.",
+    confidence: 0.96,
+    document: "Incident Response Policy.pdf",
+    page: 5,
+    quote: "Affected customers will be notified without undue delay after confirmation of a security incident.",
+  },
+  {
+    id: "finding-2",
+    control: "DP-07",
+    title: "Backup Retention Exceeds the Internal Target",
+    severity: "medium",
+    status: "partial",
+    summary: "The stated 90-day backup-retention period exceeds the 30-day internal requirement.",
+    recommendation: "Document a risk acceptance or negotiate a shorter deletion period.",
+    confidence: 0.93,
+    document: "Data Processing Addendum.pdf",
+    page: 12,
+    quote: "Backups may be retained for up to 90 days following termination of services.",
+  },
+  {
+    id: "finding-3",
+    control: "CR-04",
+    title: "Encryption Controls Are Supported",
+    severity: "low",
+    status: "met",
+    summary: "The package documents AES-256 encryption at rest and TLS 1.2 or later in transit.",
+    recommendation: "Verify implementation during technical onboarding.",
+    confidence: 0.98,
+    document: "Security Overview.pdf",
+    page: 8,
+    quote: "Customer data is encrypted at rest using AES-256 and in transit using TLS 1.2 or later.",
+  },
+  {
+    id: "finding-4",
+    control: "TP-03",
+    title: "Subprocessor Evidence Is Externally Referenced",
+    severity: "medium",
+    status: "partial",
+    summary: "The DPA references a trust-portal list, but the submitted package does not contain the list or change-notification terms.",
+    recommendation: "Capture the current list and confirm advance notification for material changes.",
+    confidence: 0.89,
+    document: "Data Processing Addendum.pdf",
+    page: 7,
+    quote: "The current subprocessor list is maintained on the provider trust portal.",
+  },
+];

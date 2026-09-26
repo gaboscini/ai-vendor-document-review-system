@@ -1,0 +1,15 @@
+{
+  "name": "ai-vendor-document-review-system",
+  "private": true,
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "npm --prefix apps/web run dev",
+    "build": "npm --prefix apps/web run build",
+    "lint": "npm --prefix apps/web run lint",
+    "validate": "node scripts/validate-project.mjs",
+    "test": "node scripts/validate-project.mjs && npm --prefix apps/web run test"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
